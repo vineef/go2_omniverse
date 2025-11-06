@@ -1,0 +1,105 @@
+[H[2J[3Jrosdep detected OS: [pop] aliasing it to: [ubuntu]
+#All required rosdeps installed successfully
+Starting >>> carter_navigation
+Starting >>> custom_message
+Starting >>> isaac_ros2_messages
+Starting >>> isaac_ros_navigation_goal
+Starting >>> isaac_tutorials
+Finished <<< carter_navigation [0.19s]
+Finished <<< isaac_tutorials [0.19s]
+Finished <<< isaac_ros2_messages [0.30s]
+Finished <<< custom_message [0.31s]
+Finished <<< isaac_ros_navigation_goal [0.52s]
+
+Summary: 5 packages finished [0.76s]
+rosdep detected OS: [pop] aliasing it to: [ubuntu]
+#All required rosdeps installed successfully
+Starting >>> go2_interfaces
+Finished <<< go2_interfaces [0.30s]
+
+Summary: 1 package finished [0.46s]
+[Warning] [simulation_app.simulation_app] Modules: ['omniverse_sim', 'omni.kit_app'] were loaded before SimulationApp was started and might not be loaded correctly.
+[Warning] [simulation_app.simulation_app] Please check to make sure no extra omniverse or pxr modules are imported before the call to SimulationApp(...)
+Loading user config located at: '/home/vinicius/miniconda3/envs/env_isaaclab/lib/python3.10/site-packages/omni/data/Kit/Isaac-Sim/4.5/user.config.json'
+[Info] [carb] Logging to file: /home/vinicius/miniconda3/envs/env_isaaclab/lib/python3.10/site-packages/omni/logs/Kit/Isaac-Sim/4.5/kit_20251105_160626.log
+2025-11-05 16:06:26 [0ms] [Warning] [omni.kit.app.plugin] No crash reporter present, dumps uploading isn't available.
+2025-11-05 16:06:27 [743ms] [Warning] [carb.windowing-glfw.gamepad] Joystick with unknown remapping detected (will be ignored):  OBINS OBINS
+AnnePro2 [03000000d904000093a2000010010000]
+2025-11-05 16:06:27 [1,004ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) Graphics (RPL-S)
+2025-11-05 16:06:27 [1,004ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) Graphics (RPL-S)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.82.09     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4070 Laptop.. | Yes: 0 |     | 8188    MB | 10de      | 0          |
+|     |                                  |        |     |            | 2860      | a05cccea.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | Intel(R) Graphics (RPL-S)        |        |     | 15906   MB | 8086      | 0          |
+|     |                                  |        |     |            | a788      | 868088a7.. |
+|     |                                  |        |     |            | 0         |            |
+|=============================================================================================|
+| OS: 22.04 LTS pop, Version: 22.04.32, Kernel: 6.12.10-76061203-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i9-13900HX
+| Bare Metal Cores: 24 | Bare Metal Logical Cores: 48
+| Available Cores:  32 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 31813 | Free Memory: 26410
+| Total Page/Swap (MB): 20479 | Free Page/Swap: 20479
+|---------------------------------------------------------------------------------------------|
+2025-11-05 16:06:38 [11,601ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2025-11-05 16:06:38 [12,145ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2025-11-05 16:06:41 [14,549ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2025-11-05 16:06:42 [15,326ms] [Warning] [omni.kit.menu.utils.app_menu] add_menu_items: menu [<MenuItemDescription name:'New'>, <MenuItemDescription name:'Open'>, <MenuItemDescription name:'Re-open with New Edit Layer'>, <MenuItemDescription name:'Save'>, <MenuItemDescription name:'Save With Options'>, <MenuItemDescription name:'Save As...'>, <MenuItemDescription name:'Save Flattened As...'>, <MenuItemDescription name:'Add Reference'>, <MenuItemDescription name:'Add Payload'>, <MenuItemDescription name:'Exit'>] cannot change delegate
+2025-11-05 16:06:42 [15,602ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2025-11-05 16:06:44 [17,558ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/ambientOcclusion/enabled'
+2025-11-05 16:06:44 [17,558ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/directLighting/sampledLighting/enabled'
+2025-11-05 16:06:44 [17,559ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/indirectDiffuse/enabled'
+2025-11-05 16:06:44 [17,559ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/raytracing/cached/enabled'
+2025-11-05 16:06:44 [17,559ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/reflections/enabled'
+2025-11-05 16:06:44 [17,559ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/sceneDb/ambientLightIntensity'
+2025-11-05 16:06:44 [17,559ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/translucency/enabled'
+2025-11-05 16:06:44 [17,559ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/viewTile/limit'
+2025-11-05 16:06:44 [17,756ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 7508933632
+2025-11-05 16:06:44 [17,756ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid false, within: false
+2025-11-05 16:06:44 [17,756ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : decrement: 167690, decrement size: 7433845248
+2025-11-05 16:06:44 [17,756ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : New limit 9574251 (slope: 447, intercept: 13179904)
+2025-11-05 16:06:44 [17,756ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 4287216384
+2025-11-05 16:06:44 [17,756ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid true, within: true
+2025-11-05 16:06:44 [17,935ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/directLighting/sampledLighting/samplesPerPixel'
+2025-11-05 16:06:44 [17,935ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/pathtracing/maxSamplesPerLaunch'
+2025-11-05 16:06:44 [17,935ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults-transient/meshlights/forceDisable'
+2025-11-05 16:06:44 [17,975ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/post/dlss/execMode'
+2025-11-05 16:06:48 [21,351ms] [Warning] [isaaclab.envs.manager_based_env] Seed not set for the environment. The environment creation may not be deterministic.
+2025-11-05 16:06:48 [21,351ms] [Warning] [isaaclab.sim.simulation_context] The `disable_contact_processing` attribute is deprecated and always set to True to avoid unnecessary overhead. Contact processing is automatically enabled when a contact sensor is created, so manual configuration is no longer required.
+2025-11-05 16:06:48 [21,396ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Camera - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:48 [21,396ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item RTX Lidar - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:48 [21,396ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item TF Publisher - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:48 [21,397ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Odometry Publisher - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:48 [21,397ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Joint States - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:48 [21,397ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Clock - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:48 [21,397ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Generic Publisher - Should be uiMenu/uiMenuItem
+2025-11-05 16:06:52 [25,876ms] [Warning] [omni.hydra.scene_delegate.plugin] Calling getBypassRenderSkelMeshProcessing for prim /World/envs/env_0/Robot/FL_foot/visuals.proto_mesh_0_id0 that has not been populated
+2025-11-05 16:06:52 [25,877ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FL_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 19536 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,877ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FL_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 6270 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,877ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RL_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 19536 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RL_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 6270 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FR_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 19536 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RR_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 19536 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FR_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 6270 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RR_calf/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 6270 doesn't match expected size 25806 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FL_thigh/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 55278 doesn't match expected size 90402 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RL_thigh/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 55278 doesn't match expected size 90402 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RL_hip/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 54198 doesn't match expected size 111120 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FL_hip/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 54198 doesn't match expected size 111120 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FL_thigh/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 35124 doesn't match expected size 90402 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RL_hip/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 56922 doesn't match expected size 111120 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/RL_thigh/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 35124 doesn't match expected size 90402 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FL_hip/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 56922 doesn't match expected size 111120 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FR_thigh/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st_1': buffer size 55254 doesn't match expected size 90378 in faceVarying primvars
+2025-11-05 16:06:52 [25,878ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/FR_thigh/visuals.proto_mesh_0_id0' has corrupted data in primvar 'st': buffer size 35124 does

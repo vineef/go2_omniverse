@@ -21,36 +21,34 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+clear
+source /opt/ros/humble/setup.bash
+cd IsaacSim-ros_workspaces/humble_ws
+rosdep install --from-paths src --ignore-src -r -y
+colcon build
+source install/setup.bash
+cd ../..
+cd go2_omniverse_ws
+rosdep install --from-paths src --ignore-src -r -y
+colcon build
+source install/setup.bash
+cd ..
 
-from terrain_generator_cfg import TerrainGeneratorCfg
-import omni.isaac.lab.terrains as terrain_gen
+cd ../ros2_ws
+colcon build
+source install/setup.bash
+ros2 launch go2_robot_sdk robot.launch.py &
+cd ../go2_omniverse
 
+# Launch rviz2
+# nohup rviz2 -d rviz_configs/go2_single_robot.rviz > /dev/null 2>&1 &
+# nohup rviz2 -d rviz_configs/go2_single_robot.rviz &
 
-ROUGH_TERRAINS_CFG = TerrainGeneratorCfg(
-    size=(8.0, 8.0),
-    border_width=0.0,
-    num_rows=1,
-    num_cols=2,
-    horizontal_scale=0.1,
-    vertical_scale=0.005,
-    slope_threshold=0.75,
-    use_cache=False,
-    sub_terrains={
-        "pyramid_stairs": terrain_gen.MeshPyramidStairsTerrainCfg(
-            proportion=0.2,
-            step_height_range=(0.05, 0.23),
-            step_width=0.3,
-            platform_width=3.0,
-            border_width=1.0,
-            holes=False,
-        ),
-        "pyramid_stairs_inv": terrain_gen.MeshInvertedPyramidStairsTerrainCfg(
-            proportion=0.2,
-            step_height_range=(0.05, 0.23),
-            step_width=0.3,
-            platform_width=3.0,
-            border_width=1.0,
-            holes=False,
-        ),
-    },
-)
+eval "$(conda shell.bash hook)"
+conda activate env_isaaclab
+# conda activate env_isaacsim_510
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+# Run the Python script
+python main.py --robot_amount 1 --robot go2 --device cuda --enable_cameras --custom_env office
+# python test.py

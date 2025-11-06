@@ -22,8 +22,18 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-from omniverse_sim import run_sim
+# from omniverse_sim import run_sim
 
+from core.app_launcher import launch_simulator
+from core.parse_cli import parse_cli_args
 
 if __name__ == "__main__":
-    run_sim()
+    args_cli, parser = parse_cli_args()
+    simulation_app = launch_simulator(args_cli, parser)
+    
+
+    from core.keyboard_input import keyboard_config
+    keyboard_config()
+
+    from core.omniverse_sim import run_sim
+    run_sim(simulation_app, args_cli)

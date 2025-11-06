@@ -1,0 +1,46 @@
+{
+  "class": "sensor",
+  "type": "lidar",
+  "name": "Custom 16-Beam Lidar 30-Deg-FOV",
+  "driveWorksId": "GENERIC",
+  "profile":
+  {
+      "scanType": "rotary",
+      "intensityProcessing": "normalization",
+      "rayType": "IDEALIZED",
+      "nearRangeM": 0.5,
+      "farRangeM": 75.0,
+      
+      "startAzimuthDeg": 0.0,
+      "endAzimuthDeg": 360.0,
+      
+      "upElevationDeg": 15.0,  
+      "downElevationDeg": -15.0,
+      
+      "rangeResolutionM": 0.001,
+      "rangeAccuracyM": 0.025,
+      
+      "maxReturns": 1, 
+      
+      "comment_rate": "1 ponto por grau na horizontal: 360 graus * 10 Hz = 3600 pontos/s. 3600 * 16 emissores = 57600 reportRateBaseHz",
+      "scanRateBaseHz": 10.0,   
+      "reportRateBaseHz": 57600, 
+      
+      "numberOfEmitters": 16,
+      
+      "comment_emitters": "Os ângulos de elevação devem ser distribuídos uniformemente entre +15 e -15 graus.",
+      "emitters":
+      {
+          "comment_azimuth": "Manter os ângulos de azimute (horizontal) em 0.0 para simular feixes paralelos.",
+          "azimuthDeg": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+          
+          "comment_elevation": "Distribuição de 16 feixes de -15 a +15 graus. Espaçamento de 30/15 = 2 graus.",
+          "elevationDeg": [14.0, 12.0, 10.0, 8.0, 6.0, 4.0, 2.0, 0.0, -2.0, -4.0, -6.0, -8.0, -10.0, -12.0, -14.0, -15.0], 
+          
+          "comment_firetime": "Intervalos de tempo de disparo arbitrários, mas sequenciais, para 16 emissores. O Lidar sequencia os feixes verticalmente.",
+          "fireTimeNs": [0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
+      },
+      
+      "intensityMappingType": "LINEAR"
+  }
+}
