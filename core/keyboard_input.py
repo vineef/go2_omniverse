@@ -1,9 +1,10 @@
-import carb
-import omni
 import core.custom_rl_env as rl_env
 
 def keyboard_config():
     """Configure keyboard input interface."""
+
+    import carb
+    import omni
 
     # acquire input interface
     _input = carb.input.acquire_input_interface()
@@ -12,6 +13,8 @@ def keyboard_config():
     _sub_keyboard = _input.subscribe_to_keyboard_events(_keyboard, sub_keyboard_event)
 
 def sub_keyboard_event(event, *args, **kwargs) -> bool:
+    import carb
+    
     linear_velocity = 1.5
     angular_velocity = 2.0
 

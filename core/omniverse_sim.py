@@ -27,7 +27,6 @@
 from __future__ import annotations
 
 import os
-import omni
 import gymnasium as gym
 import torch
 
@@ -35,15 +34,16 @@ from isaaclab_tasks.utils import get_checkpoint_path
 from isaaclab_rl.rsl_rl import RslRlOnPolicyRunnerCfg, RslRlVecEnvWrapper
 from rsl_rl.runners import OnPolicyRunner
 
-from core.ros2 import add_camera, add_rtx_lidar, pub_robo_data_ros2, init_ros_nodes
+from core.ros2 import add_camera, add_realsense, add_rtx_lidar, pub_robo_data_ros2, init_ros_nodes
 
 from core.agent_cfg import unitree_go2_agent_cfg
 import core.custom_rl_env as rl_env
-from core.omnigraph import create_front_cam_omnigraph
-
-from pxr import UsdGeom, PhysxSchema
+from core.omnigraph import *#create_front_cam_omnigraph, create_pointcloud_omnigraph
 
 def setup_custom_env(custom_env: str):
+    import omni
+    from pxr import UsdGeom
+    
     env_map = {
         "warehouse": "./envs/warehouse.usd",
         "office": "./envs/office.usd",
@@ -77,38 +77,10 @@ def setup_custom_env(custom_env: str):
         root_prim = stage.GetPrimAtPath(prim_path)
         root_prim.GetReferences().AddReference(usd_path)
 
-        # 🔽 Após carregar, adiciona colisores básicos
-        # def add_collision_to_meshes(prim):
-        #     if prim.IsA(UsdGeom.Mesh):
-        #         # Cria colisor se não existir
-        #         if not PhysxSchema.PhysxCollisionAPI(prim):
-        #             PhysxSchema.PhysxCollisionAPI.Apply(prim)
-        #             print(f"Added collider to: {prim.GetPath()}")
-        #     for child in prim.GetChildren():
-        #         add_collision_to_meshes(child)
-
-        # add_collision_to_meshes(root_prim)
-
         print(f"Environment '{custom_env}' loaded successfully at {prim_path}")
 
     except Exception as e:
         print(f"Error loading environment '{custom_env}': {e}")
-
-
-def enable_collisions_for_all(stage):
-    """
-    Percorre todos os prims e aplica PhysXCollisionAPI em meshes que ainda não possuem.
-    """
-    def apply_collision(prim):
-        if prim.IsA(UsdGeom.Mesh):
-            if not PhysxSchema.PhysxCollisionAPI(prim):
-                PhysxSchema.PhysxCollisionAPI.Apply(prim)
-                print(f"✅ Collision enabled for: {prim.GetPath()}")
-        for child in prim.GetChildren():
-            apply_collision(child)
-
-    root = stage.GetPrimAtPath("/World")
-    apply_collision(root)
 
 
 def env_config():
@@ -146,6 +118,9 @@ def load_checkpoint(env):
 def run_sim(simulation_app, args_cli):
     """Play with RSL-RL agent."""
 
+    from core.keyboard_input import keyboard_config
+    keyboard_config()
+
     env_cfg = env_config()
     env = create_env(env_cfg, args_cli.task)
     ppo_runner = load_checkpoint(env)
@@ -159,20 +134,22 @@ def run_sim(simulation_app, args_cli):
     UnitreeL1_annotator_lst = add_rtx_lidar(env_cfg.scene.num_envs, "UnitreeL1", debug=False)
     Robosense_annotator_lst = add_rtx_lidar(env_cfg.scene.num_envs, "Robosense", debug=False)
     annotator_lst = UnitreeL1_annotator_lst + Robosense_annotator_lst
-    camera_objects = add_camera(env_cfg.scene.num_envs, args_cli.robot)
+    camera_objects = add_camera(env_cfg.scene.num_envs)
+    add_realsense()
 
-    create_front_cam_omnigraph(0) # Create ros2 camera stream omnigraph
+    # create_front_cam_omnigraph(0) # Create ros2 camera stream omnigraph
+    create_d455_rgb_depth_graph()
 
-    setup_custom_env(args_cli.custom_env) 
-
-    # stage = omni.usd.get_context().get_stage()
-    # enable_collisions_for_all(stage)
+    if args_cli.use_sim_time:
+        create_ros2_clock_publisher()
+    
+    setup_custom_env(args_cli.custom_env)
 
     # Initialize ROS2 node
     # rclpy.init()
-    base_node, executor, thread = init_ros_nodes(env_cfg.scene.num_envs)
 
     try:
+        base_node = init_ros_nodes(env_cfg.scene.num_envs, env, env_cfg, annotator_lst, args_cli.use_sim_time)
         obs, _ = env.get_observations() # Reset environment
 
         # Simulate environment
@@ -181,12 +158,15 @@ def run_sim(simulation_app, args_cli):
                 actions = policy(obs) # Agent stepping
                 obs, _, _, _ = env.step(actions) # env stepping
                 
-                pub_robo_data_ros2(
-                    env_cfg.scene.num_envs,
-                    base_node,
-                    env,
-                    annotator_lst,
-                )
+                try:
+                    pub_robo_data_ros2(
+                        env_cfg.scene.num_envs,
+                        base_node,
+                        env,
+                        annotator_lst,
+                    )
+                except Exception as e:
+                    print("Erro ao publicar ROS2:", e)
 
                 # --- Conditional ROS2 spinning ---
                 # if current_time - last_ros2_update_time >= ros2_update_period:
@@ -200,6 +180,4 @@ def run_sim(simulation_app, args_cli):
         print("Closing simulation app...")
         env.close()
         simulation_app.close()
-
-        executor.join()
 

@@ -28,6 +28,6 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 
 # ==== EXECUTAR SIMULAÇÃO ====
 # cd go2_omniverse
-python main.py --robot_amount 1 --robot go2 --device cuda --enable_cameras --custom_env house --rendering_mode performance
+python main.py --robot_amount 1 --robot go2 --device cuda --enable_cameras --custom_env house --use_sim_time #--headless #--rendering_mode performance 
 # python main2.py --robot_amount 1 --robot go2 --device cuda --custom_env house
 # python test.py

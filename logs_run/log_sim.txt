@@ -1,0 +1,83 @@
+[H[2J[3J[Warning] [simulation_app.simulation_app] Modules: ['omni.kit_app'] were loaded before SimulationApp was started and might not be loaded correctly.
+[Warning] [simulation_app.simulation_app] Please check to make sure no extra omniverse or pxr modules are imported before the call to SimulationApp(...)
+Loading user config located at: '/home/vinicius/miniconda3/envs/env_isaaclab/lib/python3.10/site-packages/omni/data/Kit/Isaac-Sim/4.5/user.config.json'
+[Info] [carb] Logging to file: /home/vinicius/miniconda3/envs/env_isaaclab/lib/python3.10/site-packages/omni/logs/Kit/Isaac-Sim/4.5/kit_20251108_132846.log
+2025-11-08 13:28:46 [0ms] [Warning] [omni.kit.app.plugin] No crash reporter present, dumps uploading isn't available.
+2025-11-08 13:28:46 [405ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) Graphics (RPL-S)
+2025-11-08 13:28:46 [405ms] [Warning] [gpu.foundation.plugin] Skipping unsupported non-NVIDIA GPU: Intel(R) Graphics (RPL-S)
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.82.09     | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 4070 Laptop.. | Yes: 0 |     | 8188    MB | 10de      | 0          |
+|     |                                  |        |     |            | 2860      | a05cccea.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | Intel(R) Graphics (RPL-S)        |        |     | 15906   MB | 8086      | 0          |
+|     |                                  |        |     |            | a788      | 868088a7.. |
+|     |                                  |        |     |            | 0         |            |
+|=============================================================================================|
+| OS: 22.04 LTS pop, Version: 22.04.32, Kernel: 6.12.10-76061203-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101004 (1.21.1.4)
+| Processor: 13th Gen Intel(R) Core(TM) i9-13900HX
+| Bare Metal Cores: 24 | Bare Metal Logical Cores: 48
+| Available Cores:  32 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 31813 | Free Memory: 21229
+| Total Page/Swap (MB): 20479 | Free Page/Swap: 20479
+|---------------------------------------------------------------------------------------------|
+2025-11-08 13:28:47 [1,493ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2025-11-08 13:28:48 [1,832ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+2025-11-08 13:28:49 [2,920ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2025-11-08 13:28:49 [3,474ms] [Warning] [omni.kit.menu.utils.app_menu] add_menu_items: menu [<MenuItemDescription name:'New'>, <MenuItemDescription name:'Open'>, <MenuItemDescription name:'Re-open with New Edit Layer'>, <MenuItemDescription name:'Save'>, <MenuItemDescription name:'Save With Options'>, <MenuItemDescription name:'Save As...'>, <MenuItemDescription name:'Save Flattened As...'>, <MenuItemDescription name:'Add Reference'>, <MenuItemDescription name:'Add Payload'>, <MenuItemDescription name:'Exit'>] cannot change delegate
+2025-11-08 13:28:50 [3,604ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2025-11-08 13:28:51 [4,723ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/ambientOcclusion/enabled'
+2025-11-08 13:28:51 [4,723ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/directLighting/sampledLighting/enabled'
+2025-11-08 13:28:51 [4,723ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/indirectDiffuse/enabled'
+2025-11-08 13:28:51 [4,724ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/raytracing/cached/enabled'
+2025-11-08 13:28:51 [4,724ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/reflections/enabled'
+2025-11-08 13:28:51 [4,724ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/sceneDb/ambientLightIntensity'
+2025-11-08 13:28:51 [4,724ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/translucency/enabled'
+2025-11-08 13:28:51 [4,724ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/viewTile/limit'
+2025-11-08 13:28:51 [4,814ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 7508933632
+2025-11-08 13:28:51 [4,814ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid false, within: false
+2025-11-08 13:28:51 [4,814ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : decrement: 167690, decrement size: 7433845248
+2025-11-08 13:28:51 [4,814ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : New limit 9574251 (slope: 447, intercept: 13179904)
+2025-11-08 13:28:51 [4,814ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit buffer size 4287216384
+2025-11-08 13:28:51 [4,814ms] [Warning] [rtx.scenedb.plugin] SceneDbContext : TLAS limit : valid true, within: true
+2025-11-08 13:28:51 [4,955ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/directLighting/sampledLighting/samplesPerPixel'
+2025-11-08 13:28:51 [4,955ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/pathtracing/maxSamplesPerLaunch'
+2025-11-08 13:28:51 [4,955ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults-transient/meshlights/forceDisable'
+2025-11-08 13:28:51 [5,002ms] [Warning] [omni.usd-abi.plugin] No setting was found for '/rtx-defaults/post/dlss/execMode'
+2025-11-08 13:28:53 [7,595ms] [Warning] [isaaclab.envs.manager_based_env] Seed not set for the environment. The environment creation may not be deterministic.
+2025-11-08 13:28:53 [7,596ms] [Warning] [isaaclab.sim.simulation_context] The `disable_contact_processing` attribute is deprecated and always set to True to avoid unnecessary overhead. Contact processing is automatically enabled when a contact sensor is created, so manual configuration is no longer required.
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Camera - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item RTX Lidar - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item TF Publisher - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Odometry Publisher - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Joint States - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Clock - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:54 [7,630ms] [Warning] [omni.kit.menu.core.core] build_item: bad menu item Generic Publisher - Should be uiMenu/uiMenuItem
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base_white/visuals' has corrupted data in primvar 'st_1': buffer size 36 doesn't match expected size 493356 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base/visuals' has corrupted data in primvar 'st_2': buffer size 2502 doesn't match expected size 178410 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base_white/visuals' has corrupted data in primvar 'st': buffer size 36 doesn't match expected size 493356 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base/visuals' has corrupted data in primvar 'st_1': buffer size 6015 doesn't match expected size 178410 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base_black/visuals' has corrupted data in primvar 'st_4': buffer size 17004 doesn't match expected size 59280 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base/visuals' has corrupted data in primvar 'st': buffer size 169893 doesn't match expected size 178410 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base_black/visuals' has corrupted data in primvar 'st_2': buffer size 30390 doesn't match expected size 59280 in faceVarying primvars
+2025-11-08 13:28:56 [10,313ms] [Warning] [omni.hydra] Mesh '/World/envs/env_0/Robot/base_black/visuals' has corrupted data in primvar 'st_1': buffer size 11886 doesn't match expected size 59280 in faceVarying primvars
+2025-11-08 13:28:57 [11,088ms] [Warning] [isaacsim.core.utils.nucleus] Deprecation warning: this function has been moved to isaacsim.storage.native
+2025-11-08 13:28:58 [11,710ms] [Warning] [omni.timeline.plugin] Deprecated: direct use of ITimeline callbacks is deprecated. Use ITimeline::getTimeline (Python: omni.timeline.get_timeline_interface) instead.
+2025-11-08 13:28:58 [11,825ms] [Warning] [omni.graph.core.plugin] /ROS_CameraGraph_D455_robot0/ROS2CameraDepthInfo: [/ROS_CameraGraph_D455_robot0] OmniGraph Warning: OgnROS2CameraHelper:sensor_type == camera_info is deprecated as of Isaac Sim 4.1.0 in favour of OgnROS2CameraInfoHelper.
+                   (from compute() at line 208 in /home/vinicius/miniconda3/envs/env_isaaclab/lib/python3.10/site-packages/isaacsim/exts/isaacsim.ros2.bridge/isaacsim/ros2/bridge/ogn/python/nodes/OgnROS2CameraHelper.py)
+2025-11-08 13:28:58 [12,214ms] [Warning] [omni.usd] Warning: in _ReportErrors at line 2890 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/Robot/base/d455/RSD455/Visual/USB_C.material:binding>: The relationship target </D455/INTEL_REALSENSE_D455_CAD_EXTERN_ASM/MD0645501_ASM_12_ASM/AS0605401_ASM_4_ASM/_0137062C_1_ASM_2_ASM/_0137062C_1_1_1/Looks/Tropical_Blue> from </Root/RSD455/Visual/USB_C.material:binding> in layer @http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/4.5/Isaac/Sensors/Intel/RealSense/rsd455.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/Robot/base/d455>.  Ignoring. (getting targets for relationship </World/envs/env_0/Robot/base/d455/RSD455/Visual/USB_C.material:binding> on stage @anon:0x3c0fe960:World0.usd@ <0x3c0feb90>)
+
+2025-11-08 13:28:58 [12,217ms] [Warning] [omni.hydra] Camera '/World/envs/env_0/Robot/base/d455/RSD455/Camera_OmniVision_OV9782_Right': Unknown projection type, defaulting to pinhole
+2025-11-08 13:28:58 [12,217ms] [Warning] [omni.hydra] Camera '/World/envs/env_0/Robot/base/d455/RSD455/Camera_OmniVision_OV9782_Color': Unknown projection type, defaulting to pinhole
+2025-11-08 13:28:58 [12,217ms] [Warning] [omni.hydra] Camera '/World/envs/env_0/Robot/base/d455/RSD455/Camera_Pseudo_Depth': Unknown projection type, defaulting to pinhole
+2025-11-08 13:28:58 [12,217ms] [Warning] [omni.hydra] Camera '/World/envs/env_0/Robot/base/d455/RSD455/Camera_OmniVision_OV9782_Left': Unknown projection type, defaulting to pinhole
+2025-11-08 13:29:01 [14,768ms] [Warning] [omni.usd] Warning (secondary thread): in _ReportErrors at line 2890 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/Robot/base/d455/RSD455/Visual/USB_C.material:binding>: The relationship target </D455/INTEL_REALSENSE_D455_CAD_EXTERN_ASM/MD0645501_ASM_12_ASM/AS0605401_ASM_4_ASM/_0137062C_1_ASM_2_ASM/_0137062C_1_1_1/Looks/Tropical_Blue> fro

@@ -32,6 +32,9 @@ def parse_cli_args():
     parser.add_argument(
         "--robot_amount", type=int, default=1, help="Setup the robot amount"
     )
+    parser.add_argument(
+        "--use_sim_time", action="store_true", default=False, help="Use simulated time in ROS2"
+    )
 
 
     # append RSL-RL cli arguments

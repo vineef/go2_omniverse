@@ -29,11 +29,11 @@ from core.parse_cli import parse_cli_args
 
 if __name__ == "__main__":
     args_cli, parser = parse_cli_args()
+    # args_cli.disable_fabric = True
     simulation_app = launch_simulator(args_cli, parser)
-    
 
-    from core.keyboard_input import keyboard_config
-    keyboard_config()
+    # while simulation_app.is_running():
+    #     pass
 
     from core.omniverse_sim import run_sim
     run_sim(simulation_app, args_cli)

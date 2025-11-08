@@ -315,17 +315,17 @@ class UnitreeGo2CustomEnvCfg(LocomotionVelocityRoughEnvCfg):
         self.scene.robot = UNITREE_GO2_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
         self.scene.height_scanner.prim_path = "{ENV_REGEX_NS}/Robot/base"
 
-        for actuator in self.scene.robot.actuators.values():
-            actuator.effort_limit = 50.0
-            actuator.saturation_effort = 50.0
-            actuator.stiffness = 35.0
-            actuator.damping = 0.4
-            print("  effort_limit:", actuator.effort_limit)
-            print("  saturation_effort:", actuator.saturation_effort)
-            print("  velocity_limit:", actuator.velocity_limit)
-            print("  stiffness:", actuator.stiffness)
-            print("  damping:", actuator.damping)
-            print("  friction:", actuator.friction)
+        # for actuator in self.scene.robot.actuators.values():
+        #     actuator.effort_limit = 50.0
+        #     actuator.saturation_effort = 50.0
+        #     actuator.stiffness = 35.0
+        #     actuator.damping = 0.4
+        #     print("  effort_limit:", actuator.effort_limit)
+        #     print("  saturation_effort:", actuator.saturation_effort)
+        #     print("  velocity_limit:", actuator.velocity_limit)
+        #     print("  stiffness:", actuator.stiffness)
+        #     print("  damping:", actuator.damping)
+        #     print("  friction:", actuator.friction)
 
         # reduce action scale
         self.actions.joint_pos.scale = 0.25
